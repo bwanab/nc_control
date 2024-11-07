@@ -10,7 +10,10 @@ except:
 def select_preset(preset):
     global midiout
     pc = [0xC0, preset]
-    midiout[0].send_message(pc)
+    try:    
+        midiout[0].send_message(pc)
+    except:
+        print(f"Error sending preset message: {pc}")
 
 
 def get_preset_banks(pm_name):
