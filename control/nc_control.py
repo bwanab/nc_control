@@ -2,8 +2,10 @@ import csv
 import rtmidi
 import rtmidi.midiutil
 
-
-midiout = rtmidi.midiutil.open_midioutput("Nano Cortex")
+try:
+    midiout = rtmidi.midiutil.open_midioutput("Nano Cortex")
+except:
+    print("Error opening Nano Cortex MIDI output")
 
 def select_preset(preset):
     global midiout
