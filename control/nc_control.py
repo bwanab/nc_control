@@ -2,10 +2,11 @@ import csv
 import rtmidi
 import rtmidi.midiutil
 
-try:
-    midiout = rtmidi.midiutil.open_midioutput("Nano Cortex")
-except:
-    print("Error opening Nano Cortex MIDI output")
+def connect_to_nano():
+    try:
+        midiout = rtmidi.midiutil.open_midioutput("Nano Cortex")
+    except:
+        print("Error opening Nano Cortex MIDI output")
 
 def select_preset(preset):
     global midiout
@@ -28,3 +29,5 @@ def get_preset_map(pm_name):
         reader = csv.reader(csvfile)
         return {row[0]: int(row[1]) for row in reader}
     
+if __name__ == '__main__':
+    connect()

@@ -17,6 +17,10 @@ last_preset_per_bank = {}
 
 @app.route('/')
 def index():
+    connect_to_nano()
+    return render()
+
+def render():
     global banks, presets, current_bank, current_preset
     bank_presets = banks[current_bank]
     select_preset(presets[current_preset])
@@ -28,7 +32,7 @@ def index():
 def set_preset(preset, bank_name):
     global banks, presets, current_bank, current_preset
     current_preset = preset
-    return index()
+    return render()
 
 @app.route('/set_bank/<bank_name>')
 def set_bank(bank_name):
@@ -36,6 +40,6 @@ def set_bank(bank_name):
     last_preset_per_bank[current_bank] = current_preset
     current_bank = bank_name
     current_preset = last_preset_per_bank.get(current_bank, banks[current_bank][0])
-    return index()
+    return render()
 
 
