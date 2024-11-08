@@ -1,31 +1,37 @@
 {% extends "base.html" %}
 {% block title %}Presets{% endblock %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        {% for b in bank_list %}
-            <div class="col">
-                <form action="http://127.0.0.1:5000/set_bank/{{b}}" method="get">
-                    <button class="btn btn-primary">{{b}} </button>
-                </form>
+<div class="container-md">
+    <div class="row border rounded border-5 p-3">
+        <div class="row border rounded text-center"><h2>Preset Banks</h2></div>
+        <div class="row border rounded">
+            {% for b in bank_list %}
+                <div class="col">
+                    <form action="http://127.0.0.1:5000/set_bank/{{b}}" method="get">
+                        <button class="btn btn-primary">{{b}} </button>
+                    </form>
+                </div>
+            {% endfor %}
             </div>
-        {% endfor %}
         </div>
     </div>
-    <div class="row">
-        {% for b in bank %}
-        <div class="col">
-            {% if b == preset %}
-            <form action="http://127.0.0.1:5000/set_preset/{{b}}/{{bank_name}}" method="get">
-                <button class="btn btn-primary">{{b}} </button>
-            </form>
-            {% else %}
-            <form action="http://127.0.0.1:5000/set_preset/{{b}}/{{bank_name}}" method="get">
-                <button class="btn btn-secondary">{{b}} </button>
-            </form>
-            {% endif %}
+    <div class="row border rounded border-5 p-3">
+        <div class="row border rounded text-center"><h2>Presets</h2></div>
+        <div class="row border rounded">
+            {% for b in bank %}
+            <div class="col">
+                {% if b == preset %}
+                <form action="http://127.0.0.1:5000/set_preset/{{b}}/{{bank_name}}" method="get">
+                    <button class="btn btn-primary">{{b}} </button>
+                </form>
+                {% else %}
+                <form action="http://127.0.0.1:5000/set_preset/{{b}}/{{bank_name}}" method="get">
+                    <button class="btn btn-secondary">{{b}} </button>
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     <div class="row"></div>
 </div>

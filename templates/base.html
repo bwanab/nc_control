@@ -10,10 +10,15 @@
     {% endblock %}
 </head>
 <body>
+    <div id="header">
+        {% block header %}
+        <center><h1>Selector for Nano Cortex</h1></center>
+        {% endblock %}
+    </div>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
         {% block footer %}
-        &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
+        &copy; Copyright 2024 by <a href="http://domain.invalid/">Bill Allen</a>.
         {% endblock %}
     </div>
 </body>
