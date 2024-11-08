@@ -30,4 +30,4 @@ def get_preset_map(pm_name):
         return {row[0]: int(row[1]) for row in reader}
     
 if __name__ == '__main__':
-    connect()
+    connect_to_nano()
