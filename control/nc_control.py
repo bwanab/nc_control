@@ -2,7 +2,10 @@ import csv
 import rtmidi
 import rtmidi.midiutil
 
+midiout = 0
+
 def connect_to_nano():
+    global midiout
     try:
         midiout = rtmidi.midiutil.open_midioutput("Nano Cortex")
     except:
