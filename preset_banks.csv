@@ -1,4 +1,28 @@
-Clean,Indy 2 1 Clean,Indy 2 1 Chorus,Indy 2 1 Delay
-Edge,Indy 2 2 Clean,Indy 2 2 Chorus,Indy 2 2 Delay,Indy 2 2 Octave Down
-Crunch,Indy 2 3 Clean
-Lead,Indy 3 3 Clean
+Clean,Indy Clean,Indy Clean Chorus,Indy Clean Delay,LDW Clean,LDW Clean Chorus,LDW Clean Delay
+Edge,Indy Edge,Indy Edge Chorus,Indy Edge Delay,Indy Edge Octave Down,LDW Edge,LDW Edge Chorus,LDW Edge Delay,LDW Edge Boost
+Crunch,Indy Crunch,Indy Crunch Chorus,Indy Crunch Delay,Indy Crunch Boost,LDW Crunch,LDW Crunch Chorus,LDW Crunch Delay,LDW Crunch Boost
+Lead,Indy Lead,Indy Lead Boost,LDW Lead,LDW Lead Chorus,LDW Lead Delay,LDW Lead Boost
+Acoustic,Acoustic,Acoustic Chorus,Acoustic Delay
+Bass,Bass Classic,Bass Clean,Bass Distortion 1,Bass Distortion 2,Bass Fuzz
+Test,Test
+Beggin,Indy Edge
+Budapest,Indy Edge
+Clavado,Indy Crunch,Indy Crunch Boost
+Crazy,Indy Edge
+Crocodile Rock,Indy Crunch,Indy Crunch Boost
+Dancing In The Moonlight,Indy Edge
+Drops of Jupiter,Indy Crunch
+Rule The World,LDW Crunch Delay,Indy Crunch,Indy Crunch Boost
+Stuck On The T,Indy Edge,Indy Crunch Boost
+Give Me One Reason,Indy Crunch
+Good Luck Babe,Indy Crunch,LDW Crunch Delay
+Hazy Shade of Winter,LDW Crunch Delay,Indy Crunch Boost
+I Still Haven't Found,LDW Crunch Delay
+I Want You Back,Indy Edge
+Long Train Runnin,Indy Edge
+Mercy,Indy Crunch
+Still Into You,Indy Crunch
+Too Sweet,Indy Edge
+Waiting on the World,Indy Edge,Indy Crunch Boost
+Wish I Knew You,LDW Crunch Delay,Indy Crunch
+You're No Good,Indy Edge,LDW Crunch Delay,Indy Crunch
