@@ -1,33 +1,64 @@
 # NC_Control
 
-NOTE: This is a work in progress. It has many rough edges and probably always will.
+A Python web application to control presets on the Neural DSP Nano Cortex via MIDI.
 
-This python web app connects to the Nano Cortex and allows setting the current preset. 
+> NOTE: This is a work in progress with known rough edges.
 
-Presets must be:
-   1. set up on the Nano Cortex
-   2. described in preset_map.csv.
-   3. preset banks should be set up in preset_banks.csv
+## Prerequisites
+- Neural DSP Nano Cortex
+- Python with pip
+- USB-C cable
 
-A preset map row is in the form: <preset_name><preset_number> where the name can be whatever in principle, but probably should match the name given on the Nano Cortex. The preset_number must be the correct number on the Nano Cortex. Note that the only way I see to get that number is to count them.
+## Setup
 
-A preset bank row is in the form: <bank_name><preset 1><preset 2><preset n> where the limit to the number of presets in a bank is arbitrary in principle, but practically limited by display real estate. An example from my setup is: Clean,Indy 2 1 Clean,Indy 2 1 Chorus,Indy 2 1 Delay.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/bwanab/nc_control.git
+   cd nc_control
+   ```
 
-To use:
-1. clone this directory.
-2. cd into the directory
-3. pip install -r requirements.txt
-4. connect the Nano Cortex via the USB C cable to your computer.
-5. flash run
-6. open browser to http://127.0.0.1:5000
-   
-You can also control the presets of the Nano Cortex interactively in python.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-First, be sure to connect the Nano Cortex via the USB C cable.
-- python
-- --> from control/nc_control import *
-- --> connect_to_nano()
-- --> select_preset(15)  # selects the 15th preset as given on the Nano Cortex. This is how one can verify that the preset numbers are correct.
+3. Configure presets:
+   - Set up your presets on the Nano Cortex
+   - Update `preset_map.csv` with your presets
+   - Configure preset banks in `preset_banks.csv`
+
+## Configuration Files
+
+### preset_map.csv
+Format: `<preset_name>,<preset_number>`
+- `preset_name`: Should match the name on your Nano Cortex
+- `preset_number`: The numerical position of the preset on the Nano Cortex (must be counted manually)
+
+### preset_banks.csv
+Format: `<bank_name>,<preset_1>,<preset_2>,...,<preset_n>`
+Example:
+```csv
+Clean,Indy 2 1 Clean,Indy 2 1 Chorus,Indy 2 1 Delay
+```
+
+## Usage
+
+### Web Interface
+1. Connect the Nano Cortex via USB-C
+2. Start the application:
+   ```bash
+   flask run
+   ```
+3. Open http://127.0.0.1:5000 in your browser
+
+### Python Interactive Control
+```python
+from control.nc_control import *
+connect_to_nano()
+select_preset(15)  # Selects preset #15
+```
+
+The repository appears to be a useful tool for Neural DSP Nano Cortex users who want to control their presets programmatically or through a web interface.
 
 
 
